@@ -9,19 +9,19 @@ if ($transport->xpdo) {
     /** @var xPDOCacheManager $cache */
     $cache = $modx->getCacheManager();
     if (file_exists($dev) && $cache) {
-        if (!is_link($dev . 'assets/components/modnotes')) {
+        if (!is_link($dev . 'assets/components/modxnotes')) {
             $cache->deleteTree(
-                $dev . 'assets/components/modnotes/',
+                $dev . 'assets/components/modxnotes/',
                 ['deleteTop' => true, 'skipDirs' => false, 'extensions' => []]
             );
-            symlink(MODX_ASSETS_PATH . 'components/modnotes/', $dev . 'assets/components/modnotes');
+            symlink(MODX_ASSETS_PATH . 'components/modxnotes/', $dev . 'assets/components/modxnotes');
         }
-        if (!is_link($dev . 'core/components/modnotes')) {
+        if (!is_link($dev . 'core/components/modxnotes')) {
             $cache->deleteTree(
-                $dev . 'core/components/modnotes/',
+                $dev . 'core/components/modxnotes/',
                 ['deleteTop' => true, 'skipDirs' => false, 'extensions' => []]
             );
-            symlink(MODX_CORE_PATH . 'components/modnotes/', $dev . 'core/components/modnotes');
+            symlink(MODX_CORE_PATH . 'components/modxnotes/', $dev . 'core/components/modxnotes');
         }
     }
 }

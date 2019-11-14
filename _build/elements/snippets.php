@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'modNotes' => [
-        'file' => 'modnotes',
-        'description' => 'modNotes snippet to list notes',
+    'modxNotes' => [
+        'file' => 'modxnotes',
+        'description' => 'modxNotes snippet to list notes',
         'properties' => [
             'tpl' => [
                 'type' => 'textfield',
-                'value' => 'tpl.modNotes.item',
+                'value' => 'tpl.modxNotes.item',
             ],
             'sortby' => [
                 'type' => 'textfield',

@@ -1,0 +1,237 @@
+/* Header */
+
+.modxNotes__header {
+    padding: 20px 15px 20px;
+}
+
+/* Grid */
+
+.modnote-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px 0 -10px;
+    padding: 0 20px 100px 15px;
+}
+
+.modnote-grid--loading {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.modnote-grid--updating .modnote--updating {
+    opacity: 1;
+    color: black;
+}
+
+.modnote-grid--updating .modnote:not(.modnote--updating) {
+    opacity: .5;
+}
+
+.modnote-grid--updating .modnote--updating .modnote__name,
+.modnote-grid--updating .modnote--updating .modnote__description {
+    color: black;
+}
+
+.modnote-column {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+}
+
+/* Item */
+
+.modnote {
+    font-size: 16px;
+    position: relative;
+    height: 400px;
+    border-radius: 1rem;
+    background-color: white;
+    transition: all .2s ease;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.75rem;
+    box-sizing: border-box;
+}
+
+.modnote--disabled {
+    opacity: .5;
+    color: rgba(0,0,0,.3);
+}
+
+.modnote--disabled .modnote__name,
+.modnote--disabled .modnote__description {
+    color: rgba(0,0,0,.3);
+    text-decoration: line-through;
+}
+
+.modnote-column--locked .modnote__name,
+.modnote-column--locked .modnote__description,
+.modnote--updating .modnote__name,
+.modnote--updating .modnote__description {
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.modnote:hover {
+	box-shadow: 0 30px 20px -30px rgba(0,0,0,.1);
+}
+
+.modnote:hover .modnote-colors,
+.modnote:hover .modnote__active,
+.modnote:hover .modnote__remove {
+    opacity: 1;
+}
+
+.modnote__textarea {
+    height: 100%;
+}
+
+.modnote__name {
+    padding-bottom: 12px;
+    font-size: 1.75rem;
+    border: none;
+    background: none;
+    pointer-events: none;
+}
+
+.modnote__name.error::placeholder {
+    color: #BE0000;
+}
+
+.modnote__description {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    background: none;
+    pointer-events: none;
+}
+
+.modnote__description::placeholder {
+    color: rgba(0,0,0,.3);
+}
+
+/* Add */
+
+.modnote__add {
+    height: 400px;
+    border-radius: 1rem;
+    border: 3px solid rgba(0,0,0,.1);
+    color: rgba(0,0,0,.1);
+    margin-bottom: 20px;
+    transition: all .2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.modnote__add:hover {
+    border-color: rgba(0,0,0,.3);
+    color: rgba(0,0,0,.3);
+}
+
+/* Remove */
+
+.modnote__remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgba(0,0,0,.3);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.modnote__remove:hover {
+    background-color: #BE0000;
+    color: white;
+}
+
+/* Toolbar */
+
+.modnote__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+/* Active */
+
+.modnote__active {
+    cursor: pointer;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    opacity: 0;
+    color: rgba(0,0,0,.3);
+    transition: all .2 ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.modnote__active:hover {
+    color: rgba(0,0,0,.5);
+}
+
+.modnote__active::before {
+    content: '\F05D';
+    font-size: 20px;
+}
+
+.modnote--disabled .modnote__active::before {
+    content: '\F10C';
+}
+
+/* Colors */
+
+.modnote-colors {
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.modnote-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.modnote-color--active {
+    position: relative;
+}
+
+.modnote-color--active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.modnote-colors>.modnote-color+.modnote-color {
+    margin-left: .5rem;
+}

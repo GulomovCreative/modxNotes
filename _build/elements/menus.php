@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'modnotes' => [
-        'description' => 'modnotes_menu_desc',
+    'modxnotes' => [
+        'description' => 'modxNotes_menu_desc',
         'action' => 'home',
     ],
 ];

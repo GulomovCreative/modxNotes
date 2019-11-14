@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'tpl.modNotes.item' => [
+    'tpl.modxNotes.item' => [
         'file' => 'item',
         'description' => '',
     ],

@@ -8,10 +8,10 @@ if ($transport->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $modx->addPackage('modnotes', MODX_CORE_PATH . 'components/modnotes/model/');
+            $modx->addPackage('modxNotes', MODX_CORE_PATH . 'components/modxnotes/model/');
             $manager = $modx->getManager();
             $objects = [];
-            $schemaFile = MODX_CORE_PATH . 'components/modnotes/model/schema/modnotes.mysql.schema.xml';
+            $schemaFile = MODX_CORE_PATH . 'components/modxnotes/model/schema/modxnotes.mysql.schema.xml';
             if (is_file($schemaFile)) {
                 $schema = new SimpleXMLElement($schemaFile, 0, true);
                 if (isset($schema->object)) {
