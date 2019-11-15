@@ -5,4 +5,4 @@
  * @package modxNotes
  * @subpackage lexicon
  */
-$_lang['modxNotes_save'] = 'Разрешает создание/изменение данных.';
+$_lang['modxnotes_save'] = 'Разрешает создание/изменение данных.';

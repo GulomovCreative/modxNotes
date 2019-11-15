@@ -22,7 +22,7 @@ modxNotes.Ajax = function(action, data, form, reload = false) {
                 if (data.success) {
                     switch (action) {
                         case 'mgr/item/getlist':
-                            modxNotes.elements.grid.classList.add('modnote-grid--loading');
+                            modxNotes.elements.grid.classList.add('modxnote-grid--loading');
                             modxNotes.total = data.total;
 
                             var tmp = [];
@@ -44,7 +44,7 @@ modxNotes.Ajax = function(action, data, form, reload = false) {
                                 modxNotes.count = data.results.length;
 
                             } else {
-                                var add = modxNotes.elements.grid.querySelector('.modnote-column--locked');
+                                var add = modxNotes.elements.grid.querySelector('.modxnote-column--locked');
                                 tmp.map(function(el) {
                                     modxNotes.elements.grid.insertBefore(el, add);
                                 });
@@ -52,23 +52,23 @@ modxNotes.Ajax = function(action, data, form, reload = false) {
                                 modxNotes.count += data.results.length;
                             }
 
-                            modxNotes.elements.grid.classList.remove('modnote-grid--loading');
-                            modxNotes.elements.grid.classList.remove('modnote-grid--updating');
+                            modxNotes.elements.grid.classList.remove('modxnote-grid--loading');
+                            modxNotes.elements.grid.classList.remove('modxnote-grid--updating');
 
                             break;
                         case 'mgr/item/changecolor':
                             var color = form.querySelector('[name=color]').value || 'white';
-                            form.querySelector('.modnote-color--active').classList.remove('modnote-color--active');
-                            form.querySelector('.modnote-color.modnote--' + color).classList.add('modnote-color--active');
-                            form.className = 'modnote modnote--' + color;
+                            form.querySelector('.modxnote-color--active').classList.remove('modxnote-color--active');
+                            form.querySelector('.modxnote-color.modxnote--' + color).classList.add('modxnote-color--active');
+                            form.className = 'modxnote modxnote--' + color;
                             break;
                         case 'mgr/item/enable':
                         case 'mgr/item/disable':
                             var status = form.querySelector('[name=active]').value;
                             if (status == 1) {
-                                form.classList.remove('modnote--disabled');
+                                form.classList.remove('modxnote--disabled');
                             } else {
-                                form.classList.add('modnote--disabled');
+                                form.classList.add('modxnote--disabled');
                             }
                             break;
                         case 'mgr/item/create':

@@ -24,7 +24,7 @@ modxNotes.Events = {
         var color = form.querySelector('[name=color]');
         var choose = this.dataset.color;
 
-        if (color && !this.classList.contains('modnote-color--active')) {
+        if (color && !this.classList.contains('modxnote-color--active')) {
             color.value = choose;
             modxNotes.Ajax('mgr/item/changecolor', modxNotes.Utils.serialize(form), form);
         }
@@ -51,7 +51,7 @@ modxNotes.Events = {
         var form = this.closest('form');
         var id = form.querySelector('[name=id]').value;
         if (id) {
-            if (confirm(_('modxNotes_item_remove_confirm'))) {
+            if (confirm(_('modxnotes_item_remove_confirm'))) {
                 modxNotes.Ajax('mgr/item/remove', modxNotes.Utils.serialize(form), form);
             }
         } else {
@@ -64,32 +64,32 @@ modxNotes.Events = {
     },
     blur: function(e) {
         var target = e.relatedTarget;
-        if (target && !target.classList.contains('modnote__name') || target && !target.classList.contains('modnote__description')) {
+        if (target && !target.classList.contains('modxnote__name') || target && !target.classList.contains('modxnote__description')) {
             return;
         }
-        modxNotes.elements.grid.classList.remove('modnote-grid--updating');
-        modxNotes.elements.grid.querySelectorAll('.modnote--updating').forEach(function(el) {
-            el.classList.remove('modnote--updating');
+        modxNotes.elements.grid.classList.remove('modxnote-grid--updating');
+        modxNotes.elements.grid.querySelectorAll('.modxnote--updating').forEach(function(el) {
+            el.classList.remove('modxnote--updating');
         });
     },
     focus: function() {
-        modxNotes.elements.grid.classList.add('modnote-grid--updating');
-        modxNotes.elements.grid.querySelectorAll('.modnote--updating').forEach(function(el) {
-            el.classList.remove('modnote--updating');
+        modxNotes.elements.grid.classList.add('modxnote-grid--updating');
+        modxNotes.elements.grid.querySelectorAll('.modxnote--updating').forEach(function(el) {
+            el.classList.remove('modxnote--updating');
         });
 
         // this.children[0].focus();
 
-        var it = this.closest('.modnote');
-        it.classList.add('modnote--updating');
+        var it = this.closest('.modxnote');
+        it.classList.add('modxnote--updating');
     },
     DD: {                                   // Drag and Drop
         handleDragStart: function (e) {
-            if (!e.target.classList.contains('modnote-column--locked') && !modxNotes.elements.grid.classList.contains('modnote-grid--updating')) {
+            if (!e.target.classList.contains('modxnote-column--locked') && !modxNotes.elements.grid.classList.contains('modxnote-grid--updating')) {
                 e.dataTransfer.effectAllowed = 'move';
                 e.dataTransfer.setData('text/html', this.innerHTML);
                 modxNotes.dragEl = this;
-                this.classList.add('modnote--moving');
+                this.classList.add('modxnote--moving');
             } else {
                 e.preventDefault();
             }

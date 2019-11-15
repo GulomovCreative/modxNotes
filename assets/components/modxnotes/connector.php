@@ -14,7 +14,7 @@ $modxNotes = $modx->getService('modxNotes', 'modxnotes', MODX_CORE_PATH . 'compo
 $modx->lexicon->load('modxnotes:default');
 
 // handle request
-$corePath = $modx->getOption('modxNotes_core_path', null, $modx->getOption('core_path') . 'components/modxnotes/');
+$corePath = $modx->getOption('modxnotes_core_path', null, $modx->getOption('core_path') . 'components/modxnotes/');
 $path = $modx->getOption('processorsPath', $modxNotes->config, $corePath . 'processors/');
 $modx->getRequest();
 

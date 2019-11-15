@@ -4,7 +4,7 @@ class modxNotesItemChangeColorProcessor extends modObjectProcessor
 {
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
-    public $languageTopics = ['modxNotes'];
+    public $languageTopics = ['modxnotes'];
     //public $permission = 'save';
 
 
@@ -20,12 +20,12 @@ class modxNotesItemChangeColorProcessor extends modObjectProcessor
         $color = $this->getProperty('color');
         $id = $this->getProperty('id');
         if (empty($id)) {
-            return $this->failure($this->modx->lexicon('modxNotes_item_err_ns'));
+            return $this->failure($this->modx->lexicon('modxnotes_item_err_ns'));
         }
         
         /** @var modxNotesItem $object */
         if (!$object = $this->modx->getObject($this->classKey, $id)) {
-            return $this->failure($this->modx->lexicon('modxNotes_item_err_nf'));
+            return $this->failure($this->modx->lexicon('modxnotes_item_err_nf'));
         }
 
         $object->set('color', $color);

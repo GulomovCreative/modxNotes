@@ -4,7 +4,7 @@ class modxNotesItemGetProcessor extends modObjectGetProcessor
 {
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
-    public $languageTopics = ['modxNotes:default'];
+    public $languageTopics = ['modxnotes:default'];
     //public $permission = 'view';
 
 

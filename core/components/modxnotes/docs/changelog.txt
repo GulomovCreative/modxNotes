@@ -1,5 +1,9 @@
 Changelog for modxNotes.
 
+1.1.0-beta
+==============
+- Change component name to modxNotes by [Pavel Zarubin](https://github.com/pavel-one/)
+
 1.0.0-beta
 ==============
 - First release

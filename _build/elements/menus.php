@@ -2,7 +2,7 @@
 
 return [
     'modxnotes' => [
-        'description' => 'modxNotes_menu_desc',
+        'description' => 'modxnotes_menu_desc',
         'action' => 'home',
     ],
 ];

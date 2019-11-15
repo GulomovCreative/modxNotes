@@ -15,9 +15,9 @@ class modxNotesItemCreateProcessor extends modObjectCreateProcessor
     {
         $name = trim($this->getProperty('name'));
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('modxNotes_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('modxnotes_item_err_name'));
         } elseif ($this->modx->getCount($this->classKey, ['name' => $name])) {
-            $this->modx->error->addField('name', $this->modx->lexicon('modxNotes_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('modxnotes_item_err_ae'));
         }
 
         return parent::beforeSet();

@@ -5,4 +5,4 @@
  * @package modxNotes
  * @subpackage lexicon
  */
-$_lang['modxNotes_save'] = 'Permission for save/update data.';
+$_lang['modxnotes_save'] = 'Permission for save/update data.';

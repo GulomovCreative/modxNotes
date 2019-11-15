@@ -4,7 +4,7 @@ class modxNotesItemUpdateProcessor extends modObjectUpdateProcessor
 {
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
-    public $languageTopics = ['modxNotes'];
+    public $languageTopics = ['modxnotes'];
     //public $permission = 'save';
 
 
@@ -32,13 +32,13 @@ class modxNotesItemUpdateProcessor extends modObjectUpdateProcessor
         $id = (int)$this->getProperty('id');
         $name = trim($this->getProperty('name'));
         if (empty($id)) {
-            return $this->modx->lexicon('modxNotes_item_err_ns');
+            return $this->modx->lexicon('modxnotes_item_err_ns');
         }
 
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('modxNotes_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('modxnotes_item_err_name'));
         } elseif ($this->modx->getCount($this->classKey, ['name' => $name, 'id:!=' => $id])) {
-            $this->modx->error->addField('name', $this->modx->lexicon('modxNotes_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('modxnotes_item_err_ae'));
         }
 
         return parent::beforeSet();

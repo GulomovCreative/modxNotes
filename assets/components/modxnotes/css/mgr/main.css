@@ -1,38 +1,38 @@
 /* Header */
 
-.modxNotes__header {
+.modxnotes__header {
     padding: 20px 15px 20px;
 }
 
 /* Grid */
 
-.modnote-grid {
+.modxnote-grid {
     display: flex;
     flex-wrap: wrap;
     margin: 0 10px 0 -10px;
     padding: 0 20px 100px 15px;
 }
 
-.modnote-grid--loading {
+.modxnote-grid--loading {
     opacity: .5;
     pointer-events: none;
 }
 
-.modnote-grid--updating .modnote--updating {
+.modxnote-grid--updating .modxnote--updating {
     opacity: 1;
     color: black;
 }
 
-.modnote-grid--updating .modnote:not(.modnote--updating) {
+.modxnote-grid--updating .modxnote:not(.modxnote--updating) {
     opacity: .5;
 }
 
-.modnote-grid--updating .modnote--updating .modnote__name,
-.modnote-grid--updating .modnote--updating .modnote__description {
+.modxnote-grid--updating .modxnote--updating .modxnote__name,
+.modxnote-grid--updating .modxnote--updating .modxnote__description {
     color: black;
 }
 
-.modnote-column {
+.modxnote-column {
     padding-left: 10px;
     padding-right: 10px;
     flex: 0 25%;
@@ -42,7 +42,7 @@
 
 /* Item */
 
-.modnote {
+.modxnote {
     font-size: 16px;
     position: relative;
     height: 400px;
@@ -58,40 +58,40 @@
     box-sizing: border-box;
 }
 
-.modnote--disabled {
+.modxnote--disabled {
     opacity: .5;
     color: rgba(0,0,0,.3);
 }
 
-.modnote--disabled .modnote__name,
-.modnote--disabled .modnote__description {
+.modxnote--disabled .modxnote__name,
+.modxnote--disabled .modxnote__description {
     color: rgba(0,0,0,.3);
     text-decoration: line-through;
 }
 
-.modnote-column--locked .modnote__name,
-.modnote-column--locked .modnote__description,
-.modnote--updating .modnote__name,
-.modnote--updating .modnote__description {
+.modxnote-column--locked .modxnote__name,
+.modxnote-column--locked .modxnote__description,
+.modxnote--updating .modxnote__name,
+.modxnote--updating .modxnote__description {
     pointer-events: auto;
     text-decoration: none;
 }
 
-.modnote:hover {
+.modxnote:hover {
 	box-shadow: 0 30px 20px -30px rgba(0,0,0,.1);
 }
 
-.modnote:hover .modnote-colors,
-.modnote:hover .modnote__active,
-.modnote:hover .modnote__remove {
+.modxnote:hover .modxnote-colors,
+.modxnote:hover .modxnote__active,
+.modxnote:hover .modxnote__remove {
     opacity: 1;
 }
 
-.modnote__textarea {
+.modxnote__textarea {
     height: 100%;
 }
 
-.modnote__name {
+.modxnote__name {
     padding-bottom: 12px;
     font-size: 1.75rem;
     border: none;
@@ -99,11 +99,11 @@
     pointer-events: none;
 }
 
-.modnote__name.error::placeholder {
+.modxnote__name.error::placeholder {
     color: #BE0000;
 }
 
-.modnote__description {
+.modxnote__description {
     height: 100%;
     width: 100%;
     border: none;
@@ -113,13 +113,13 @@
     pointer-events: none;
 }
 
-.modnote__description::placeholder {
+.modxnote__description::placeholder {
     color: rgba(0,0,0,.3);
 }
 
 /* Add */
 
-.modnote__add {
+.modxnote__add {
     height: 400px;
     border-radius: 1rem;
     border: 3px solid rgba(0,0,0,.1);
@@ -135,14 +135,14 @@
     box-sizing: border-box;
 }
 
-.modnote__add:hover {
+.modxnote__add:hover {
     border-color: rgba(0,0,0,.3);
     color: rgba(0,0,0,.3);
 }
 
 /* Remove */
 
-.modnote__remove {
+.modxnote__remove {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -157,14 +157,14 @@
     transition: opacity .2s ease;
 }
 
-.modnote__remove:hover {
+.modxnote__remove:hover {
     background-color: #BE0000;
     color: white;
 }
 
 /* Toolbar */
 
-.modnote__toolbar {
+.modxnote__toolbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -173,7 +173,7 @@
 
 /* Active */
 
-.modnote__active {
+.modxnote__active {
     cursor: pointer;
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -185,29 +185,29 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.modnote__active:hover {
+.modxnote__active:hover {
     color: rgba(0,0,0,.5);
 }
 
-.modnote__active::before {
+.modxnote__active::before {
     content: '\F05D';
     font-size: 20px;
 }
 
-.modnote--disabled .modnote__active::before {
+.modxnote--disabled .modxnote__active::before {
     content: '\F10C';
 }
 
 /* Colors */
 
-.modnote-colors {
+.modxnote-colors {
     display: flex;
     justify-content: flex-end;
     opacity: 0;
     transition: opacity .2s ease;
 }
 
-.modnote-color {
+.modxnote-color {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -216,11 +216,11 @@
     background-color: white;
 }
 
-.modnote-color--active {
+.modxnote-color--active {
     position: relative;
 }
 
-.modnote-color--active::after {
+.modxnote-color--active::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -232,6 +232,6 @@
     background-color: white;
 }
 
-.modnote-colors>.modnote-color+.modnote-color {
+.modxnote-colors>.modxnote-color+.modxnote-color {
     margin-left: .5rem;
 }

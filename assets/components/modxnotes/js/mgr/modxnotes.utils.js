@@ -12,7 +12,7 @@ modxNotes.Utils = {
         switch (element) {
             case 'column':
                 var el = this.createNode('div', {
-                    class: 'modnote-column',
+                    class: 'modxnote-column',
                 });
                 if (drag) {
                     var dragEl = null;
@@ -22,19 +22,19 @@ modxNotes.Utils = {
                     el.addEventListener('drop', modxNotes.Events.DD.handleDrop, false);
                     el.addEventListener('dragend', modxNotes.Events.DD.handleDragEnd, false);
                 } else {
-                    el.classList.add('modnote-column--locked');
+                    el.classList.add('modxnote-column--locked');
                 }
                 
                 break;
             case 'name':
                 var el = this.createNode('div', {
-                    class: 'modnote__input',
+                    class: 'modxnote__input',
                 });
                 var name = this.createNode('input', {
                     type: 'text',
-                    class: 'modnote__name',
+                    class: 'modxnote__name',
                     name: 'name',
-                    placeholder: _('modxNotes_item_name_placeholder'),
+                    placeholder: _('modxnotes_item_name_placeholder'),
                     value: data ? data.name : '',
                 });
                 name.addEventListener('keyup', data ? modxNotes.Events.update : modxNotes.Events.create);
@@ -45,12 +45,12 @@ modxNotes.Utils = {
                 break;
             case 'description':
                 var el = this.createNode('div', {
-                    class: 'modnote__textarea',
+                    class: 'modxnote__textarea',
                 });
                 var description = this.createNode('textarea', {
-                    class: 'modnote__description',
+                    class: 'modxnote__description',
                     name: 'description',
-                    placeholder: _('modxNotes_item_description_placeholder'),
+                    placeholder: _('modxnotes_item_description_placeholder'),
                 });
                 description.innerText = data ? data.description : '';
                 description.addEventListener('keyup', data ? modxNotes.Events.update : modxNotes.Events.create);
@@ -61,7 +61,7 @@ modxNotes.Utils = {
                 break;
             case 'item':
                 var el = this.createNode('form', {
-                    class: 'modnote',
+                    class: 'modxnote',
                 });
                 el.onsubmit = function(e) {
                     e.preventDefault();
@@ -75,8 +75,8 @@ modxNotes.Utils = {
                 });
 
                 var remove = this.createNode('span', {
-                    class: 'modnote__remove',
-                    title: _('modxNotes_item_remove'),
+                    class: 'modxnote__remove',
+                    title: _('modxnotes_item_remove'),
                 });
                 remove.innerHTML = '<i class="icon icon-close"></i>';
                 remove.addEventListener('click', modxNotes.Events.remove);
@@ -98,11 +98,11 @@ modxNotes.Utils = {
                     });
 
                     if (!data.active) {
-                        el.classList.add('modnote--disabled');
+                        el.classList.add('modxnote--disabled');
                     }
 
                     if (data.color) {
-                        el.classList.add('modnote--' + data.color);
+                        el.classList.add('modxnote--' + data.color);
                     }
 
                     var toolbar = this.createElement('toolbar', data);
@@ -112,8 +112,8 @@ modxNotes.Utils = {
                 break;
             case 'add':
                 var el = this.createNode('div', {
-                    class: 'modnote__add',
-                    title: _('modxNotes_item_create'),
+                    class: 'modxnote__add',
+                    title: _('modxnotes_item_create'),
                 });
                 el.innerText = '+';
                 el.addEventListener('click', modxNotes.Events.add);
@@ -121,22 +121,22 @@ modxNotes.Utils = {
                 break;
             case 'toolbar':
                 var el = this.createNode('div', {
-                    class: 'modnote__toolbar',
+                    class: 'modxnote__toolbar',
                 });
 
                 if (data) {
                     var colors = this.createNode('ul', {
-                        class: 'modnote-colors',
+                        class: 'modxnote-colors',
                     });
     
                     for (var key in modxNotes.colors) {
                         var tmp = this.createNode('li', {
-                            class: 'modnote-color modnote--' + key,
-                            title: _('modxNotes_item_color_' + key),
+                            class: 'modxnote-color modxnote--' + key,
+                            title: _('modxnotes_item_color_' + key),
                         });
                         var color = data.color || 'white';
                         if (color == key) {
-                            tmp.classList.add('modnote-color--active');
+                            tmp.classList.add('modxnote-color--active');
                         }
                         tmp.dataset.color = modxNotes.colors[key] ? key : '';
                         tmp.addEventListener('click', modxNotes.Events.changeColor);
@@ -146,8 +146,8 @@ modxNotes.Utils = {
 
                     var activeClass = data.active ? ' active' : '';
                     var active = this.createNode('span', {
-                        class: 'modnote__active' + activeClass,
-                        title: data.active ? _('modxNotes_item_disable') : _('modxNotes_item_enable'),
+                        class: 'modxnote__active' + activeClass,
+                        title: data.active ? _('modxnotes_item_disable') : _('modxnotes_item_enable'),
                     });
                     active.addEventListener('click', modxNotes.Events.changeStatus);
 

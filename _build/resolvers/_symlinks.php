@@ -5,7 +5,7 @@
 if ($transport->xpdo) {
     $modx =& $transport->xpdo;
 
-    $dev = MODX_BASE_PATH . 'Extras/modNotes/';
+    $dev = MODX_BASE_PATH . 'Extras/modxNotes/';
     /** @var xPDOCacheManager $cache */
     $cache = $modx->getCacheManager();
     if (file_exists($dev) && $cache) {

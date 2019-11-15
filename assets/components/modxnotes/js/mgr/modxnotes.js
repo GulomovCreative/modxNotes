@@ -17,10 +17,10 @@ modxNotes.init = function() {
         head: document.head || document.getElementsByTagName('head')[0],
         wrapper: document.getElementById('modxnotes-panel-home-div').nextElementSibling.firstElementChild,
         header: this.Utils.createNode('h2', {
-            class: 'modxNotes__header',
-            title: _('modxNotes'),
-        }, _('modxNotes')),
-        grid: this.Utils.createNode('div', { class: 'modnote-grid' }),
+            class: 'modxnotes__header',
+            title: _('modxnotes'),
+        }, _('modxnotes')),
+        grid: this.Utils.createNode('div', { class: 'modxnote-grid' }),
     };
     console.log(this);
 
@@ -55,7 +55,7 @@ modxNotes.init = function() {
     var css = '';
     for (var color in this.colors) {
         if (this.colors[color]) {
-            css += '.modnote--' + color + ' { background-color: #' + this.colors[color] + ' !important; } ';    // Здесь подготавливаются стили
+            css += '.modxnote--' + color + ' { background-color: #' + this.colors[color] + ' !important; } ';    // Здесь подготавливаются стили
         }
     }
 
@@ -68,10 +68,10 @@ modxNotes.init = function() {
 
     document.addEventListener('click', function(e) {
         var target = e.target;
-        if (!target.classList.contains('modnote') && !target.closest('.modnote')) {
-            modxNotes.elements.grid.classList.remove('modnote-grid--updating');
-            modxNotes.elements.grid.querySelectorAll('.modnote--updating').forEach(function(el) {
-                el.classList.remove('modnote--updating');
+        if (!target.classList.contains('modxnote') && !target.closest('.modxnote')) {
+            modxNotes.elements.grid.classList.remove('modxnote-grid--updating');
+            modxNotes.elements.grid.querySelectorAll('.modxnote--updating').forEach(function(el) {
+                el.classList.remove('modxnote--updating');
             });
         }
     });
