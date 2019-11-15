@@ -22,7 +22,6 @@ modxNotes.init = function() {
         }, _('modxnotes')),
         grid: this.Utils.createNode('div', { class: 'modxnote-grid' }),
     };
-    console.log(this);
 
     this.elements.wrapper.addEventListener('scroll', function(e) {
         if (modxNotes.loading) { return false; }
