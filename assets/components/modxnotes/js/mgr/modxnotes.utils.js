@@ -168,7 +168,8 @@ modxNotes.Utils = {
                     }),
                     user = this.createNode('a', {
                         class: 'modnote-user',
-                        href: '/manager/?a=security/user/update&id='+data.user_id
+                        href: '/manager/?a=security/user/update&id=' + data.user_id,
+                        target: '_blank'
                     }, this.ucFirst(data.user)),
                     created_at = this.createNode('div', {
                         class: 'modnote-created_at'
@@ -206,8 +207,7 @@ modxNotes.Utils = {
                 : new Date(string.replace(/(\d+)-(\d+)-(\d+)/, '$2/$3/$1'));
 
             return strftime('%d.%m.%Y %H:%M', date);
-        }
-        else {
+        } else {
             return '&nbsp;';
         }
     }
