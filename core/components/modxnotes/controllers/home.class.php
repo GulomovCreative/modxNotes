@@ -62,6 +62,7 @@ class modxNotesHomeManagerController extends modExtraManagerController
         Ext.onReady(function() {modxNotes.init();});
         </script>');
 
+        $this->addLastJavascript($this->modxNotes->config['jsUrl'] . 'mgr/misc/strftime.min.js');
         $this->addLastJavascript($this->modxNotes->config['jsUrl'] . 'mgr/modxnotes.events.js');
         $this->addLastJavascript($this->modxNotes->config['jsUrl'] . 'mgr/modxnotes.utils.js');
         $this->addLastJavascript($this->modxNotes->config['jsUrl'] . 'mgr/modxnotes.ajax.js');

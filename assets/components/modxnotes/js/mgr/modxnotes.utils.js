@@ -4,11 +4,13 @@ modxNotes.Utils = {
         for (key in attributes) {
             el.setAttribute(key, attributes[key]);
         }
-        if (innerText) { el.innerText = innerText; }
+        if (innerText) {
+            el.innerText = innerText;
+        }
 
         return el;
     },
-    createElement: function(element, data, drag = true) {       // Метод создания более сложных элементов
+    createElement: function (element, data, drag = true) {       // Метод создания более сложных элементов
         switch (element) {
             case 'column':
                 var el = this.createNode('div', {
@@ -24,7 +26,7 @@ modxNotes.Utils = {
                 } else {
                     el.classList.add('modnote-column--locked');
                 }
-                
+
                 break;
             case 'name':
                 var el = this.createNode('div', {
@@ -63,7 +65,7 @@ modxNotes.Utils = {
                 var el = this.createNode('form', {
                     class: 'modnote',
                 });
-                el.onsubmit = function(e) {
+                el.onsubmit = function (e) {
                     e.preventDefault();
                     return false;
                 }
@@ -106,7 +108,14 @@ modxNotes.Utils = {
                     }
 
                     var toolbar = this.createElement('toolbar', data);
-                    el.append(active, toolbar);
+                    var info = this.createElement('info', data);
+                    console.log(toolbar);
+                    console.log(info);
+                    console.log(info);
+                    console.log(info);
+                    console.log(info);
+                    console.log(info);
+                    el.append(active, toolbar, info);
                 }
 
                 break;
@@ -123,12 +132,11 @@ modxNotes.Utils = {
                 var el = this.createNode('div', {
                     class: 'modnote__toolbar',
                 });
-
                 if (data) {
                     var colors = this.createNode('ul', {
                         class: 'modnote-colors',
                     });
-    
+
                     for (var key in modxNotes.colors) {
                         var tmp = this.createNode('li', {
                             class: 'modnote-color modnote--' + key,
@@ -140,10 +148,9 @@ modxNotes.Utils = {
                         }
                         tmp.dataset.color = modxNotes.colors[key] ? key : '';
                         tmp.addEventListener('click', modxNotes.Events.changeColor);
-    
+
                         colors.append(tmp);
                     }
-
                     var activeClass = data.active ? ' active' : '';
                     var active = this.createNode('span', {
                         class: 'modnote__active' + activeClass,
@@ -155,6 +162,19 @@ modxNotes.Utils = {
                 }
 
                 break;
+            case 'info':
+                var el = this.createNode('div', {
+                        class: 'modnote__info',
+                    }),
+                    user = this.createNode('a', {
+                        class: 'modnote-user',
+                        href: '/manager/?a=security/user/update&id='+data.user_id
+                    }, this.ucFirst(data.user)),
+                    created_at = this.createNode('div', {
+                        class: 'modnote-created_at'
+                    }, this.formatDate(data.created_at));
+                console.log(data);
+                el.append(user, created_at);
         }
 
         return el;
@@ -169,11 +189,26 @@ modxNotes.Utils = {
                     if (!field.options[n].selected) continue;
                     serialized[field.name] = field.options[n].value;
                 }
-            }
-            else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+            } else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
                 serialized[field.name] = field.value;
             }
         }
         return serialized;
+    },
+    ucFirst: function (str) {
+        if (!str) return str;
+        return str[0].toUpperCase() + str.slice(1);
+    },
+    formatDate: function (string) {
+        if (string && string != '0000-00-00 00:00:00' && string != '-1-11-30 00:00:00' && string != 0) {
+            var date = /^[0-9]+$/.test(string)
+                ? new Date(string * 1000)
+                : new Date(string.replace(/(\d+)-(\d+)-(\d+)/, '$2/$3/$1'));
+
+            return strftime('%d.%m.%Y %H:%M', date);
+        }
+        else {
+            return '&nbsp;';
+        }
     }
-}
+};
