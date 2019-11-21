@@ -11,7 +11,7 @@ if (!defined('MODX_CORE_PATH')) {
 return [
     'name' => 'modxNotes',
     'name_lower' => 'modxnotes',
-    'version' => '1.0.0',
+    'version' => '1.1.0',
     'release' => 'pl',
     // Install package to site right after build
     'install' => true,
@@ -20,6 +20,7 @@ return [
         'chunks' => true,
         'menus' => true,
         'snippets' => true,
+        'settings' => false,
     ],
     // Which elements should be static by default
     'static' => [

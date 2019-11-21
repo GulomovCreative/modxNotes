@@ -109,12 +109,6 @@ modxNotes.Utils = {
 
                     var toolbar = this.createElement('toolbar', data);
                     var info = this.createElement('info', data);
-                    console.log(toolbar);
-                    console.log(info);
-                    console.log(info);
-                    console.log(info);
-                    console.log(info);
-                    console.log(info);
                     el.append(active, toolbar, info);
                 }
 
@@ -202,11 +196,11 @@ modxNotes.Utils = {
     },
     formatDate: function (string) {
         if (string && string != '0000-00-00 00:00:00' && string != '-1-11-30 00:00:00' && string != 0) {
-            var date = /^[0-9]+$/.test(string)
+            let date = /^[0-9]+$/.test(string)
                 ? new Date(string * 1000)
                 : new Date(string.replace(/(\d+)-(\d+)-(\d+)/, '$2/$3/$1'));
 
-            return strftime('%d.%m.%Y %H:%M', date);
+            return strftime(modxNotes.config.dateFormat, date);
         } else {
             return '&nbsp;';
         }

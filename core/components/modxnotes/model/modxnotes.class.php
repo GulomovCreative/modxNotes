@@ -25,6 +25,7 @@ class modxNotes
             'assetsUrl' => $assetsUrl,
             'cssUrl' => $assetsUrl . 'css/',
             'jsUrl' => $assetsUrl . 'js/',
+            'dateFormat' => $this->modx->getOption('modxnotes_date_format', [], '%d.%m.%Y %H:%M')
         ], $config);
 
         $this->modx->addPackage('modxnotes', $this->config['modelPath']);

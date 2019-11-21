@@ -3,3 +3,11 @@ Changelog for modxNotes.
 1.0.0-beta
 ==============
 - First release
+
+1.1.0-pl
+==============
+- Rename component
+- Add created_at field
+- Add user_id field
+- Add format date setting
+- Add other js utils
