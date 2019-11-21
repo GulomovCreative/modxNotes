@@ -2,7 +2,7 @@
 /** @var modX $modx */
 /** @var array $scriptProperties */
 /** @var modxNotes $modxNotes */
-$modxNotes = $modx->getService('modxNotes', 'modxNotes', MODX_CORE_PATH . 'components/modxNotes/model/', $scriptProperties);
+$modxNotes = $modx->getService('modxNotes', 'modxNotes', MODX_CORE_PATH . 'components/modxnotes/model/', $scriptProperties);
 if (!$modxNotes) {
     return 'Could not load modxNotes class!';
 }

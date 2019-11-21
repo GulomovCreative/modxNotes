@@ -8,7 +8,7 @@ if ($transport->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $modx->addPackage('modxNotes', MODX_CORE_PATH . 'components/modxnotes/model/');
+            $modx->addPackage('modxnotes', MODX_CORE_PATH . 'components/modxnotes/model/');
             $manager = $modx->getManager();
             $objects = [];
             $schemaFile = MODX_CORE_PATH . 'components/modxnotes/model/schema/modxnotes.mysql.schema.xml';
