@@ -24,6 +24,15 @@ class modxNotesItemGetListProcessor extends modObjectGetListProcessor
         return true;
     }
 
+    public function prepareRow(xPDOObject $object)
+    {
+        /** @var modUser $userObj */
+        $userObj = $object->getOne('User');
+        $array = $object->toArray();
+        $array['user'] = $userObj->username;
+        return $array;
+    }
+
 }
 
 return 'modxNotesItemGetListProcessor';

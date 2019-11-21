@@ -235,3 +235,20 @@
 .modxnote-colors>.modxnote-color+.modxnote-color {
     margin-left: .5rem;
 }
+.modnote__info {
+    transition: .25s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #999999;
+    font-size: .9em;
+    opacity: .5;
+}
+.modnote:hover .modnote__info {
+    opacity: 1;
+}
+.modnote__info a {
+    text-decoration: none;
+}
