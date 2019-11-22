@@ -22,6 +22,9 @@ $_lang['modxnotes_item_color_green'] = 'Green';
 $_lang['modxnotes_item_color_red'] = 'Red';
 $_lang['modxnotes_item_color_yellow'] = 'Yellow';
 
+$_lang['modxnotes_item_to_user'] = 'Go to user page {0}';
+$_lang['modxnotes_item_created_at'] = 'Created date';
+
 $_lang['modxnotes_item_err_name'] = 'You must specify the title of note.';
 $_lang['modxnotes_item_err_ae'] = 'An note already exists with that title.';
 $_lang['modxnotes_item_err_nf'] = 'Note not found.';

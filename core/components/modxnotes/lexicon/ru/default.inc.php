@@ -22,6 +22,9 @@ $_lang['modxnotes_item_color_green'] = 'Зелёный';
 $_lang['modxnotes_item_color_red'] = 'Красный';
 $_lang['modxnotes_item_color_yellow'] = 'Жёлтый';
 
+$_lang['modxnotes_item_to_user'] = 'Перейти на страницу пользователя {0}';
+$_lang['modxnotes_item_created_at'] = 'Дата создания';
+
 $_lang['modxnotes_item_err_name'] = 'Вы должны указать заголовок заметки.';
 $_lang['modxnotes_item_err_ae'] = 'Заметка с таким заголовком уже существует.';
 $_lang['modxnotes_item_err_nf'] = 'Заметка не найдена.';

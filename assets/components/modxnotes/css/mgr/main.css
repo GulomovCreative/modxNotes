@@ -235,20 +235,25 @@
 .modxnote-colors>.modxnote-color+.modxnote-color {
     margin-left: .5rem;
 }
-.modnote__info {
-    transition: .25s;
+
+/* Info */
+
+.modxnote__info {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     margin-top: 10px;
-    color: #999999;
-    font-size: .9em;
+    color: rgba(0,0,0,.3);
+    font-size: .75em;
     opacity: .5;
+    transition: .25s;
 }
-.modxnote-column:hover .modnote__info {
+
+.modxnote-column:hover .modxnote__info {
     opacity: 1;
 }
-.modnote__info a {
+
+.modxnote__user {
+    color: rgba(0,0,0,.3);
     text-decoration: none;
 }

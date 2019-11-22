@@ -158,17 +158,20 @@ modxNotes.Utils = {
                 break;
             case 'info':
                 var el = this.createNode('div', {
-                        class: 'modnote__info',
+                        class: 'modxnote__info',
                     }),
                     user = this.createNode('a', {
-                        class: 'modnote-user',
                         href: '/manager/?a=security/user/update&id=' + data.user_id,
-                        target: '_blank'
+                        class: 'modxnote__user',
+                        target: '_blank',
+                        title: String.format(_('modxnotes_item_to_user'), this.ucFirst(data.user))
                     }, this.ucFirst(data.user)),
-                    created_at = this.createNode('div', {
-                        class: 'modnote-created_at'
+                    created_at = this.createNode('span', {
+                        class: 'modxnote__created_at',
+                        datetime: data.created_at,
+                        title: _('modxnotes_item_created_at') + ': ' + this.formatDate(data.created_at)
                     }, this.formatDate(data.created_at));
-                console.log(data);
+
                 el.append(user, created_at);
         }
 
