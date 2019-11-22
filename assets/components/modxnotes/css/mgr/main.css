@@ -245,12 +245,7 @@
     margin-top: 10px;
     color: rgba(0,0,0,.3);
     font-size: .75em;
-    opacity: .5;
     transition: .25s;
-}
-
-.modxnote-column:hover .modxnote__info {
-    opacity: 1;
 }
 
 .modxnote__user {
