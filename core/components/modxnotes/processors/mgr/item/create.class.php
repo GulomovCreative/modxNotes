@@ -5,6 +5,8 @@ class modxNotesItemCreateProcessor extends modObjectCreateProcessor
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
     public $languageTopics = ['modxnotes'];
+    public $beforeSaveEvent = 'mnOnBeforeCreateNote';
+    public $afterSaveEvent = 'mnOnCreateNote';
     //public $permission = 'create';
 
 
