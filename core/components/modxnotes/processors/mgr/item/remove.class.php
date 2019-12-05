@@ -5,6 +5,8 @@ class modxNotesItemRemoveProcessor extends modObjectProcessor
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
     public $languageTopics = ['modxnotes'];
+    public $beforeRemoveEvent = 'mnOnBeforeRemoveNote';
+    public $afterRemoveEvent = 'mnOnRemoveNote';
     //public $permission = 'remove';
 
 
@@ -27,7 +29,17 @@ class modxNotesItemRemoveProcessor extends modObjectProcessor
             return $this->failure($this->modx->lexicon('modxnotes_item_err_nf'));
         }
 
-        $object->remove();
+        $this->modx->invokeEvent($this->beforeRemoveEvent, array(
+            'object' => $object,
+        ));
+
+        if ($object->remove() == false) {
+            return $this->failure($this->modx->lexicon('modxnotes_item_err_remove'));
+        }
+
+        $this->modx->invokeEvent($this->afterRemoveEvent, array(
+            'object' => $object,
+        ));
 
         return $this->success();
     }

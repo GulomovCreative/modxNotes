@@ -5,6 +5,8 @@ class modxNotesItemUpdateProcessor extends modObjectUpdateProcessor
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
     public $languageTopics = ['modxnotes'];
+    public $beforeSaveEvent = 'mnOnBeforeUpdateNote';
+    public $afterSaveEvent = 'mnOnUpdateNote';
     //public $permission = 'save';
 
 

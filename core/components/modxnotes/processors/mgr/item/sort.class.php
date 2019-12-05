@@ -3,6 +3,8 @@ class modxNotesItemSortProcessor extends modObjectProcessor
 {
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
+    public $beforeSaveEvent = 'mnOnBeforeUpdateNote';
+    public $afterSaveEvent = 'mnOnUpdateNote';
 
 
     /**
@@ -56,7 +58,18 @@ class modxNotesItemSortProcessor extends modObjectProcessor
         $c->prepare();
         $c->stmt->execute();
         $source->set('rank', $target->get('rank'));
-        $source->save();
+
+        $this->modx->invokeEvent($this->beforeSaveEvent, array(
+            'object' => $source,
+        ));
+
+        if ($source->save() == false) {
+            return $this->failure($this->modx->lexicon('modxnotes_item_err_save'));
+        }
+
+        $this->modx->invokeEvent($this->afterSaveEvent, array(
+            'object' => $source,
+        ));
     }
 
     /**

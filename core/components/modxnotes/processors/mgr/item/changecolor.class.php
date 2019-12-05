@@ -5,6 +5,8 @@ class modxNotesItemChangeColorProcessor extends modObjectProcessor
     public $objectType = 'modxNotesItem';
     public $classKey = 'modxNotesItem';
     public $languageTopics = ['modxnotes'];
+    public $beforeSaveEvent = 'mnOnBeforeUpdateNote';
+    public $afterSaveEvent = 'mnOnUpdateNote';
     //public $permission = 'save';
 
 
@@ -28,8 +30,18 @@ class modxNotesItemChangeColorProcessor extends modObjectProcessor
             return $this->failure($this->modx->lexicon('modxnotes_item_err_nf'));
         }
 
+        $this->modx->invokeEvent($this->beforeSaveEvent, array(
+            'object' => $object,
+        ));
+
         $object->set('color', $color);
-        $object->save();
+        if ($object->save() == false) {
+            return $this->failure($this->modx->lexicon('modxnotes_item_err_save'));
+        }
+
+        $this->modx->invokeEvent($this->afterSaveEvent, array(
+            'object' => $object,
+        ));
 
         return $this->success();
     }
