@@ -1,5 +1,9 @@
 Changelog for modxNotes.
 
+1.2.1-pl
+==============
+- Added responsivity to columns
+
 1.2.0-pl
 ==============
 - Added plugin events

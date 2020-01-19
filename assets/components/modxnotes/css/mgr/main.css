@@ -1,3 +1,8 @@
+.modxnotes__wrapper {
+    overflow: hidden auto;
+    height: 100vh;
+}
+
 /* Header */
 
 .modxnotes__header {
@@ -9,8 +14,9 @@
 .modxnote-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 10px 0 -10px;
-    padding: 0 20px 100px 15px;
+    margin: 0 -10px;
+    padding: 0 15px 100px;
+    width: 100%;
 }
 
 .modxnote-grid--loading {
@@ -35,9 +41,30 @@
 .modxnote-column {
     padding-left: 10px;
     padding-right: 10px;
-    flex: 0 25%;
-    max-width: 25%;
+    flex: 0 100%;
+    max-width: 100%;
     box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+    .modxnote-column {
+        flex: 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modxnote-column {
+        flex: 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .modxnote-column {
+        flex: 0 25%;
+        max-width: 25%;
+    }
 }
 
 /* Item */
@@ -97,6 +124,7 @@
     border: none;
     background: none;
     pointer-events: none;
+    max-width: 100%;
 }
 
 .modxnote__name.error::placeholder {

@@ -15,18 +15,18 @@ modxNotes.init = function() {
 
     this.elements = {
         head: document.head || document.getElementsByTagName('head')[0],
-        wrapper: document.getElementById('modxnotes-panel-home-div').nextElementSibling.firstElementChild,
+        wrapper: document.getElementById('modxnotes-panel-home-div'),
         header: this.Utils.createNode('h2', {
             class: 'modxnotes__header',
             title: _('modxnotes'),
         }, _('modxnotes')),
         grid: this.Utils.createNode('div', { class: 'modxnote-grid' }),
     };
-
+    this.elements.wrapper.classList.add('modxnotes__wrapper');
     this.elements.wrapper.addEventListener('scroll', function(e) {
         if (modxNotes.loading) { return false; }
-        let scroll = this.scrollTop + window.innerHeight - 110,
-            gridHeight = modxNotes.elements.grid.offsetHeight;
+        let scroll = this.scrollTop + window.innerHeight,
+        gridHeight = modxNotes.elements.grid.offsetHeight;
         if (modxNotes.count < modxNotes.total && scroll > gridHeight) {
             modxNotes.reload({
                 start: modxNotes.count,
