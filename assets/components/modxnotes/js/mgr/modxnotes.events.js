@@ -32,9 +32,9 @@ modxNotes.Events = {
     changeStatus: function() {
         var form = this.closest('form');
         var active = form.querySelector('[name=active]');
-        var status = !!!active.value;
-        modxNotes.Ajax(active.value == 1 ? 'mgr/item/disable' : 'mgr/item/enable', modxNotes.Utils.serialize(form), form);
-        active.value = active.value == 1 ? 0 : 1;
+        var status = !!+active.value;
+        modxNotes.Ajax(status ? 'mgr/item/disable' : 'mgr/item/enable', modxNotes.Utils.serialize(form), form);
+        active.value = status ? 0 : 1;
     },
     update: function() {
         var form = this.closest('form');
