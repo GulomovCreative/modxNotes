@@ -31,6 +31,7 @@ modxNotes.Utils = {
             case 'name':
                 var el = this.createNode('div', {
                     class: 'modxnote__input',
+                    title: data ? data.name : '',
                 });
                 var name = this.createNode('input', {
                     type: 'text',
