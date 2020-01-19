@@ -1,17 +1,17 @@
 Changelog for modxNotes.
 
-1.1.0-beta
+1.2.0-pl
 ==============
-- Change component name to modxNotes by [Pavel Zarubin](https://github.com/pavel-one/)
+- Added plugin events
+
+1.1.0-pl
+==============
+- Component renamed to modxNotes
+- Added created_at field
+- Added user_id field
+- Added format date setting
+- Added other js utils
 
 1.0.0-beta
 ==============
 - First release
-
-1.1.0-pl
-==============
-- Rename component
-- Add created_at field
-- Add user_id field
-- Add format date setting
-- Add other js utils

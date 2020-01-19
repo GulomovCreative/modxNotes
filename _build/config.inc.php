@@ -11,7 +11,7 @@ if (!defined('MODX_CORE_PATH')) {
 return [
     'name' => 'modxNotes',
     'name_lower' => 'modxnotes',
-    'version' => '1.1.0',
+    'version' => '1.2.0',
     'release' => 'pl',
     // Install package to site right after build
     'install' => true,
