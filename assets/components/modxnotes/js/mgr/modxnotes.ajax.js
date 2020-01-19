@@ -92,6 +92,7 @@ modxNotes.Ajax = function(action, data, form, reload = false) {
                     data.data.forEach(function(el) {
                         var input = form.querySelector('[name=' + el.id + ']');
                         input.setAttribute('title', el.msg);
+                        input.parentNode.setAttribute('title', el.msg);
                         input.classList.add('error');
                     });
                 }

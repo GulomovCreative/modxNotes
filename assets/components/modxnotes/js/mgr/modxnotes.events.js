@@ -46,6 +46,7 @@ modxNotes.Events = {
             modxNotes.Ajax('mgr/item/update', modxNotes.Utils.serialize(form), form);
         }, 1000);
         this.removeAttribute('title');
+        this.parentNode.removeAttribute('title');
     },
     remove: function() {
         var form = this.closest('form');
